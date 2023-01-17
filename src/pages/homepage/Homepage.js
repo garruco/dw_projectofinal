@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { API_URL } from "../../api";
 import Spline from "@splinetool/react-spline";
 import ProjectList from "../../components/project-list/ProjectList";
-import MyImage from "../../components/imagem/Imagem";
 
 const Homepage = () => {
   const [projects, setProjects] = useState(null);
@@ -54,7 +53,7 @@ const Homepage = () => {
       </div>
 
       <div className="projects">
-        <h2>Projects</h2>
+        {/*       <h2>Projects</h2>
         <button className="filter-button" onClick={() => fetchProjects()}>
           All Projects
         </button>
@@ -66,10 +65,8 @@ const Homepage = () => {
           >
             {category.name}
           </button>
-        ))}
-        <div>
-          <MyImage imageId={23} />
-        </div>
+        ))} */}
+
         {projectList}
       </div>
     </div>
