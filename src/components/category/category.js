@@ -23,7 +23,7 @@ function PageCategory({ pageId }) {
       });
   }, []);
 
-  return <p>{category}</p>;
+  return <p className="category">{category}</p>;
 }
 
 export default PageCategory;
