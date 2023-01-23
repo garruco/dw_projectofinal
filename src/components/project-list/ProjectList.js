@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import FeaturedImage from "../../components/featuredimage/featuredimage";
 import PageCategory from "../../components/category/category";
 import LineWithDots from "../../components/LineWithDots/LineWithDots";
+import PageDescription from "../../components/PageDescription/PageDescription";
+import PageDate from "../../components/date/date";
 
 const ProjectList = ({ projects }) => {
   return (
@@ -17,11 +19,9 @@ const ProjectList = ({ projects }) => {
                 width="6rem"
                 height="4px"
               />
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: project?.content?.rendered,
-                }}
-              />
+              <PageDate pageId={project.id} />
+
+              <PageDescription pageId={project.id} />
 
               <Link className="links" to={`/projects/${project.slug}`}>
                 {project?.title?.rendered}
