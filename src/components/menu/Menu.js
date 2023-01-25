@@ -65,7 +65,7 @@ const Menu = ({ children }) => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/contact">Work</Link>
+                <Link to="/works">Works</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>

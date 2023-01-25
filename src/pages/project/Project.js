@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { API_URL } from "../../api";
 import FeaturedImage from "../../components/featuredimage/featuredimage";
+import Footer from "../../components/Footer/Footer";
 
 const Project = () => {
   const [projectInfo, setProjectInfo] = useState(null);
@@ -21,10 +22,11 @@ const Project = () => {
 
   return (
     <div>
-      <h1>{projectInfo[0]?.title?.rendered}</h1>
       <div
+        className="main-container-proj"
         dangerouslySetInnerHTML={{ __html: projectInfo[0]?.content?.rendered }}
       />
+      <Footer />
     </div>
   );
 };
