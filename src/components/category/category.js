@@ -21,7 +21,7 @@ function PageCategory({ pageId }) {
             });
         }
       });
-  }, []);
+  }, [pageId]);
 
   return <p className="category">{category}</p>;
 }

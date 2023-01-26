@@ -1,62 +1,65 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { API_URL } from "../../api";
+import { Link } from "react-router-dom";
 import FeaturedImage from "../../components/featuredimage/featuredimage";
+import PageDescriptionUpdate from "../../components/PageDescriptionUpdate/PageDescriptionUpdate";
+import PageCategory from "../../components/category/category";
 
-const ProjectCarousel = () => {
-  const [currentProject, setCurrentProject] = useState({});
+const WordpressProjects = () => {
   const [projects, setProjects] = useState([]);
-  const [updated, setUpdated] = useState(false);
+  const [currentProject, setCurrentProject] = useState(null);
 
   useEffect(() => {
-    fetch("https://dw-c3fe4d.ingress-daribow.ewp.live/wp-json/wp/v2/projects")
+    fetch(API_URL + `projects`)
       .then((response) => response.json())
-      .then((data) => {
-        setProjects(data);
-      });
+      .then((data) => setProjects(data));
+  }, []);
 
+  useEffect(() => {
     const handleScroll = () => {
-      const carousel = document.querySelector(".project-carousel");
-      const carouselRect = carousel.getBoundingClientRect();
-      const carouselMid = (carouselRect.right - carouselRect.left) / 2;
-      setUpdated(false);
-
       projects.forEach((project) => {
-        const projectEl = document.querySelector(`#project-${project.id}`);
-        if (projectEl) {
-          const projectRect = projectEl.getBoundingClientRect();
-          if (
-            projectRect.left <= carouselMid &&
-            projectRect.right >= carouselMid &&
-            !updated
-          ) {
-            setCurrentProject(project);
-            setUpdated(true);
-          }
+        const image = document.getElementById(`project-image-${project.id}`);
+        if (image.getBoundingClientRect().top < 300) {
+          setCurrentProject(project);
         }
       });
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [projects, updated]);
+  }, [projects]);
 
   return (
-    <div className="project-carousel-wrapper">
-      <div className="project-carousel">
+    <div className="cont-works">
+      <div className="work-desc">
+        <div className="category-container">
+          {currentProject && <PageCategory pageId={currentProject.id} />}
+        </div>
+        <h2 className="work-proj-title">
+          {currentProject ? currentProject.title.rendered : "Loading..."}
+        </h2>
+        <div className="description-container">
+          {currentProject && (
+            <PageDescriptionUpdate pageId={currentProject.id} />
+          )}
+        </div>
+      </div>
+      <div className="project-list">
         {projects.map((project) => (
-          <div
-            id={`project-${project.id}`}
-            className="project"
-            key={project.id}
-          >
-            <FeaturedImage pageId={project.id} type="projects" />
+          <div id={`project-image-${project.id}`} className="img-works">
+            <Link className="links" to={`/projects/${project.slug}`}>
+              {project?.title?.rendered}
+            </Link>
+            <FeaturedImage
+              pageId={project.id}
+              type="projects"
+              project={currentProject}
+            />
           </div>
         ))}
       </div>
-      <h2 className="current-title">
-        {currentProject.title && currentProject.title.rendered}
-      </h2>
     </div>
   );
 };
 
-export default ProjectCarousel;
+export default WordpressProjects;
