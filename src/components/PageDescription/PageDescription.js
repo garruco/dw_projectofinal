@@ -6,7 +6,7 @@ function PageDescription({ pageId }) {
   useEffect(() => {
     fetch(
       `https://dw-c3fe4d.ingress-daribow.ewp.live/wp-json/wp/v2/projects/${pageId}`
-      )
+    )
       .then((response) => response.json())
       .then((data) => {
         setDescription(data.acf.description);
