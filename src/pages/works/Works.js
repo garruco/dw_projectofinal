@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import FeaturedImage from "../../components/featuredimage/featuredimage";
 import PageDescriptionUpdate from "../../components/PageDescriptionUpdate/PageDescriptionUpdate";
 import PageCategory from "../../components/category/category";
+import Footer from "../../components/Footer/Footer";
 
 const WordpressProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -58,6 +59,7 @@ const WordpressProjects = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

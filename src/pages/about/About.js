@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { API_URL } from "../../api";
+import Footer from "../../components/Footer/Footer";
 
 const About = () => {
   const [aboutPageInfo, setAboutPageInfo] = useState(null);
@@ -25,6 +26,7 @@ const About = () => {
         }}
         className="about"
       />
+      <Footer />
     </div>
   );
 };
