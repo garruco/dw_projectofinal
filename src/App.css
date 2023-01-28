@@ -38,7 +38,8 @@ body {
 
 .navbar .menu-items {
   display: flex;
-  z-index: 2; /*------------------------------*/
+  z-index: 2;
+  /*------------------------------*/
 }
 
 .navbar .nav-container li {
@@ -381,9 +382,56 @@ body {
   flex-direction: column;
 }
 
+.mouse svg {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 1.5;
+}
+
+.mouse svg path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 20px;
+}
+
+.mouse {
+  position: absolute;
+  top: 85%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(100px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(100px);
+  }
+}
+svg #wheel {
+  -webkit-animation: scroll ease 1.5s infinite;
+          animation: scroll ease 1.5s infinite;
+}
+
 .img-big {
   width: 60%;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .img-big img {
@@ -405,7 +453,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 5vw;
-  width: 80%;
+  width: 70%;
   height: 50vh;
 }
 
@@ -423,7 +471,7 @@ body {
 }
 
 .proj-cate {
-  margin-top: 30%;
+  margin-top: 20%;
   color: #a70a27;
   font-size: 2rem;
 }
@@ -455,14 +503,15 @@ body {
 }
 
 .project-list {
-  border-left: 3px solid #0d0d0d;
-  border-right: 3px solid #0d0d0d;
+  border-left: 3px solid rgba(13, 13, 13, 0.1);
+  border-right: 3px solid rgba(13, 13, 13, 0.1);
   float: right;
   margin-right: 10%;
   display: flex;
   flex-direction: column;
   width: 50%;
   margin-left: 50%;
+  margin-bottom: 5%;
 }
 
 .project-list div:nth-child(2n+1) {
@@ -485,12 +534,17 @@ body {
   height: 300px;
 }
 
-.img-works img {
+.img-works:hover .featured-img {
+  transform: scale(1.1);
+}
+
+.featured-img {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 25px;
   width: 100%;
   height: 100%;
+  transition: all 0.5s ease-in-out;
 }
 
 .work-proj-title {

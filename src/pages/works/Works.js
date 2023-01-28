@@ -50,12 +50,12 @@ const WordpressProjects = () => {
           <div id={`project-image-${project.id}`} className="img-works">
             <Link className="links" to={`/projects/${project.slug}`}>
               {project?.title?.rendered}
+              <FeaturedImage
+                pageId={project.id}
+                type="projects"
+                project={currentProject}
+              />
             </Link>
-            <FeaturedImage
-              pageId={project.id}
-              type="projects"
-              project={currentProject}
-            />
           </div>
         ))}
       </div>

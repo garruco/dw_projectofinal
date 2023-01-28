@@ -14,7 +14,7 @@ function FeaturedImage({ pageId, type }) {
       });
   }, []);
 
-  return <img src={imageUrl} alt="Featured Image" />;
+  return <img src={imageUrl} alt="Featured Image" className="featured-img"/>;
 }
 
 export default FeaturedImage;
