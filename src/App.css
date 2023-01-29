@@ -206,7 +206,7 @@ body {
 .links {
   text-decoration: none;
   color: #0d0d0d;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -227,7 +227,6 @@ body {
 
 .about {
   width: 100vw;
-  height: 70vh;
   display: flex;
   gap: 5%;
 }

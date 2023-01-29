@@ -18,14 +18,16 @@ const About = () => {
   }
 
   return (
-    <div className="about-container">
-      <h1 className="title-about">{aboutPageInfo[0]?.title?.rendered}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: aboutPageInfo[0]?.content?.rendered,
-        }}
-        className="about"
-      />
+    <div>
+      <div className="about-container">
+        <h1 className="title-about">{aboutPageInfo[0]?.title?.rendered}</h1>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: aboutPageInfo[0]?.content?.rendered,
+          }}
+          className="about"
+        />
+      </div>
       <Footer />
     </div>
   );
