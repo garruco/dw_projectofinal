@@ -8,6 +8,21 @@ body {
   overflow-x: hidden;
 }
 
+ul {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 0em;
+          margin-block-start: 0em;
+  -webkit-margin-after: 0em;
+          margin-block-end: 0em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+}
+
 /*--------------*/
 .logo {
   z-index: 10;
@@ -17,6 +32,7 @@ body {
   width: 5%;
   font-size: 1.2rem;
   fill: #ffffff;
+  mix-blend-mode: difference;
 }
 
 .navbar {
@@ -26,6 +42,7 @@ body {
   height: 100vh;
   width: 0;
   z-index: 5;
+  mix-blend-mode: difference;
 }
 
 .nav-container {
@@ -183,7 +200,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  gap: 10%;
+  gap: 5%;
   margin-bottom: 5%;
   align-items: center;
 }
@@ -206,7 +223,14 @@ body {
 .links {
   text-decoration: none;
   color: #0d0d0d;
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.img-works .links {
+  text-decoration: none;
+  color: #0d0d0d;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -221,7 +245,7 @@ body {
 
 .category {
   color: #a70a27;
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -229,6 +253,7 @@ body {
   width: 100vw;
   display: flex;
   gap: 5%;
+  margin-bottom: 5%;
 }
 
 .group {
@@ -284,13 +309,14 @@ body {
 }
 
 .container-photos {
-  height: 50vw;
+  height: 55vw;
   background-color: #0d0d0d;
 }
 
 .line-with-dots {
   display: flex;
   align-items: center;
+  margin-top: 5%;
 }
 
 .line-at-start .lined {
@@ -332,7 +358,6 @@ body {
   padding: 20px;
   background-color: #0d0d0d;
   color: #fff;
-  border-top: 3px solid #f2f2f2;
 }
 
 .left-logo img {
@@ -348,7 +373,7 @@ body {
   display: flex;
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
-  width: 20%;
+  width: auto;
   justify-content: right;
 }
 
@@ -359,7 +384,11 @@ body {
 
 .logo-footer {
   fill: #f2f2f2;
-  width: 15%;
+  width: 5%;
+}
+
+.description {
+  font-size: 1rem;
 }
 
 .teamtitle {
@@ -374,7 +403,7 @@ body {
   height: fit-content;
 }
 
-.main-container-proj {
+.carrosel-test {
   width: 100vw;
   display: flex;
   align-items: center;
@@ -479,16 +508,16 @@ svg #wheel {
 .left {
   cursor: pointer;
   position: absolute;
-  left: 15%;
-  bottom: -100%;
+  left: 40%;
+  bottom: 3%;
   scale: 4;
 }
 
 .right {
   cursor: pointer;
   position: absolute;
-  right: 15%;
-  bottom: -100%;
+  right: 40%;
+  bottom: 3%;
   scale: 4;
 }
 
@@ -567,6 +596,7 @@ svg #wheel {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  margin-bottom: 5%;
 }
 
 .cont-works {
@@ -582,7 +612,8 @@ svg #wheel {
   flex-direction: column;
   width: 50%;
   margin-left: 50%;
-  margin-bottom: 5%;
+  padding-top: 5%;
+  padding-bottom: 40vh;
 }
 
 .project-list div:nth-child(2n+1) {
@@ -600,9 +631,9 @@ svg #wheel {
 }
 
 .img-works {
-  margin-top: 5%;
+  margin-top: 0%;
   width: 50%;
-  height: 300px;
+  height: auto;
 }
 
 .img-works:hover .featured-img {
@@ -635,10 +666,30 @@ svg #wheel {
   width: 60%;
 }
 
+.main-container-proj {
+  position: relative;
+}
+
+.date {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 @media only screen and (max-width: 600px) {
   /* homepage */
   .logo {
     width: 8%;
+  }
+  .navbar {
+    position: fixed;
+    right: 0;
+    top: 2%;
+    height: 100vh;
+    width: 0;
+    z-index: 5;
+  }
+  .projects {
+    width: 100vw;
   }
   .home-title {
     font-size: 2.5rem;
@@ -646,15 +697,15 @@ svg #wheel {
   }
   /* footer */
   .team {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   .right-social {
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
-    width: 5%;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+    width: auto;
   }
   .logo-footer {
-    width: 15%;
+    width: 10%;
   }
   /* about */
   .about {
@@ -690,10 +741,13 @@ svg #wheel {
   }
   .category {
     color: #a70a27;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     width: auto;
-    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .description {
+    font-size: 1rem;
   }
   .work-proj-title {
     color: #0d0d0d;
@@ -709,8 +763,16 @@ svg #wheel {
   }
   .description {
     margin: 0;
+    display: none;
+    font-size: 1rem;
   }
   .links {
+    text-decoration: none;
+    color: #0d0d0d;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .img-works .links {
     text-decoration: none;
     color: #0d0d0d;
     font-size: 1.5rem;
@@ -725,7 +787,9 @@ svg #wheel {
     width: 70%;
     margin-top: 102%;
     margin-right: 15%;
-    height: 100vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   .img-works {
     margin-top: 0%;
@@ -751,11 +815,109 @@ svg #wheel {
     width: 100%;
     height: 200px;
   }
+  .left {
+    cursor: pointer;
+    position: absolute;
+    left: 40%;
+    bottom: 1%;
+    scale: 2;
+  }
+  .right {
+    cursor: pointer;
+    position: absolute;
+    right: 40%;
+    bottom: 1%;
+    scale: 2;
+  }
+  .img-big {
+    width: 80%;
+    margin-top: 15%;
+    margin-bottom: 5%;
+  }
+  .img-big img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+  .proj-desc-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vw;
+    width: 70%;
+    height: 50vh;
+  }
+  .projectdesc {
+    margin-top: 5%;
+    width: 100%;
+    height: 50%;
+    font-weight: 100;
+    font-size: 1rem;
+  }
+  .titulo-proj {
+    color: #0d0d0d;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .proj-cate {
+    color: #a70a27;
+    font-size: 1.5rem;
+  }
+  .mouse {
+    position: absolute;
+    top: 35%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .mouse2 {
+    position: absolute;
+    top: 35%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .project {
+    gap: 0%;
+    margin-bottom: 0%;
+    flex-direction: column;
+  }
+  .img-projects img {
+    width: 65vw;
+    height: 65vw;
+  }
+  .project-info {
+    width: 65vw;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   /* homepage */
   .logo {
     width: 10%;
+  }
+  .work-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    top: 0;
+    font-size: 4px;
+    background: #f2f2f2;
+    padding-top: 20%;
+    padding-bottom: 5%;
+    height: auto;
   }
   .home-title {
     font-size: 3.5rem;
@@ -769,9 +931,25 @@ svg #wheel {
     width: 80%;
     height: auto;
   }
+  .project-list {
+    border-left: none;
+    border-right: none;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 102%;
+    margin-right: 15%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
   .img-about img {
     width: 80vw;
     height: 73vw;
+  }
+  .category {
+    font-size: 2rem;
   }
   .title-about {
     font-size: 4rem;
@@ -790,12 +968,42 @@ svg #wheel {
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   /* homepage */
+  .category {
+    font-size: 2rem;
+  }
   .logo {
     width: 10%;
+  }
+  .work-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    top: 0;
+    font-size: 4px;
+    background: #f2f2f2;
+    padding-top: 20%;
+    padding-bottom: 5%;
+    height: auto;
   }
   .home-title {
     font-size: 3.5rem;
     width: 90%;
+  }
+  .project-list {
+    border-left: none;
+    border-right: none;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 102%;
+    margin-right: 15%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   /* about */
   .about {
@@ -858,5 +1066,19 @@ svg #wheel {
   .group p {
     margin-left: 4%;
     width: 80%;
+  }
+  .left {
+    cursor: pointer;
+    position: absolute;
+    left: 40%;
+    bottom: 2%;
+    scale: 4;
+  }
+  .right {
+    cursor: pointer;
+    position: absolute;
+    right: 40%;
+    bottom: 2%;
+    scale: 4;
   }
 }/*# sourceMappingURL=App.css.map */

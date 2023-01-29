@@ -33,11 +33,16 @@ const WordpressProjects = () => {
   return (
     <div className="cont-works">
       <div className="mouse2">
-        <svg width="30px" height="100%" viewBox="0 0 247 390" version="1.1"
-          xmlns="http://www.w3.org/2000/svg" >
-          <path id="wheel" d="M123.359,79.775l0,72.843"
-          />
-          <path id="mouse"
+        <svg
+          width="30px"
+          height="100%"
+          viewBox="0 0 247 390"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path id="wheel" d="M123.359,79.775l0,72.843" />
+          <path
+            id="mouse"
             d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
           />
         </svg>
@@ -47,7 +52,7 @@ const WordpressProjects = () => {
           {currentProject && <PageCategory pageId={currentProject.id} />}
         </div>
         <h2 className="work-proj-title">
-          {currentProject ? currentProject.title.rendered : "Loading..."}
+          {currentProject ? currentProject.title.rendered : "Scroll..."}
         </h2>
         <div className="description-container">
           {currentProject && (
