@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 const Menu = ({ children }) => {
+  const [isBlended, setIsBlended] = useState(false);
+
   return (
     <>
       <nav>
@@ -50,9 +53,15 @@ const Menu = ({ children }) => {
             />
           </svg>
         </Link>
-        <div className="navbar">
+        <div className={isBlended ? "navbar blend" : "navbar"}>
           <div className="nav-container">
-            <input className="checkbox" type="checkbox" name="" id="" />
+            <input
+              className="checkbox"
+              onClick={() => setIsBlended(!isBlended)}
+              type="checkbox"
+              name=""
+              id=""
+            />
 
             <div className="hamburger-lines">
               <span className="line line1"></span>
