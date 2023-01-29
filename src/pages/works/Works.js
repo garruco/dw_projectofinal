@@ -10,22 +10,28 @@ const WordpressProjects = () => {
   const [projects, setProjects] = useState([]);
   const [currentProject, setCurrentProject] = useState(null);
 
-  useEffect(() => {
-    fetch(API_URL + `projects`)
+  const fetchProjects = async (category = "") => {
+    await fetch(API_URL + `projects${category}`)
       .then((response) => response.json())
-      .then((data) => setProjects(data));
+      .then((result) => {
+        setProjects(result);
+      });
+  };
+
+  const handleScroll = () => {
+    projects.forEach((project) => {
+      const image = document.getElementById(`project-image-${project.id}`);
+      if (image.getBoundingClientRect().top < 300) {
+        setCurrentProject(project);
+      }
+    });
+  };
+
+  useEffect(() => {
+    fetchProjects();
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      projects.forEach((project) => {
-        const image = document.getElementById(`project-image-${project.id}`);
-        if (image.getBoundingClientRect().top < 300) {
-          setCurrentProject(project);
-        }
-      });
-    };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [projects]);
