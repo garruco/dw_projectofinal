@@ -48,7 +48,11 @@ const Footer = () => {
         <a href="mailto:info@example.com">geral@studio101.pt</a>
       </div>
       <div className="right-social">
-        <a href="https://www.youtube.com" target="_blank">
+        <a
+          href="https://www.youtube.com"
+          className="youtube-icon"
+          target="_blank"
+        >
           <svg
             width="44"
             height="31"
@@ -62,7 +66,11 @@ const Footer = () => {
             />
           </svg>
         </a>
-        <a href="https://www.instagram.com" target="_blank">
+        <a
+          href="https://www.instagram.com"
+          className="instagram-icon"
+          target="_blank"
+        >
           <svg
             width="31"
             height="32"
@@ -76,7 +84,11 @@ const Footer = () => {
             />
           </svg>
         </a>
-        <a href="https://www.behance.com" target="_blank">
+        <a
+          href="https://www.behance.com"
+          className="behance-icon"
+          target="_blank"
+        >
           <svg
             width="47"
             height="29"

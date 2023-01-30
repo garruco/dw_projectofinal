@@ -9,12 +9,21 @@ import Footer from "../../components/Footer/Footer";
 const WordpressProjects = () => {
   const [projects, setProjects] = useState([]);
   const [currentProject, setCurrentProject] = useState(null);
+  const [categories, setCategories] = useState(null);
 
   const fetchProjects = async (category = "") => {
     await fetch(API_URL + `projects${category}`)
       .then((response) => response.json())
       .then((result) => {
         setProjects(result);
+      });
+  };
+
+  const fetchCategories = async () => {
+    await fetch(API_URL + "categories")
+      .then((response) => response.json())
+      .then((result) => {
+        setCategories(result);
       });
   };
 
@@ -29,12 +38,17 @@ const WordpressProjects = () => {
 
   useEffect(() => {
     fetchProjects();
+    fetchCategories();
   }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [projects]);
+
+  if (!categories) {
+    return null;
+  }
 
   return (
     <div className="cont-works">
@@ -67,6 +81,20 @@ const WordpressProjects = () => {
         </div>
       </div>
       <div className="project-list">
+        <div className="buttons-filter">
+          <button className="filter-button" onClick={() => fetchProjects()}>
+            All Projects
+          </button>
+          {categories.map((category) => (
+            <button
+              className="filter-button"
+              key={category.id}
+              onClick={() => fetchProjects(`?categories=${category.id}`)}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
         {projects.map((project) => (
           <div id={`project-image-${project.id}`} className="img-works">
             <Link className="links" to={`/projects/${project.slug}`}>

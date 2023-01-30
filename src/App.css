@@ -23,6 +23,30 @@ ul {
           padding-inline-start: 0px;
 }
 
+.instagram-icon path {
+  transition: 0.3s ease-in-out;
+}
+
+.instagram-icon:hover path {
+  fill: #a70a27;
+}
+
+.youtube-icon path {
+  transition: 0.3s ease-in-out;
+}
+
+.youtube-icon:hover path {
+  fill: #a70a27;
+}
+
+.behance-icon path {
+  transition: 0.3s ease-in-out;
+}
+
+.behance-icon:hover path {
+  fill: #a70a27;
+}
+
 /*--------------*/
 .logo {
   z-index: 10;
@@ -71,10 +95,17 @@ ul {
   font-weight: 500;
   font-size: 5.5rem;
   padding: 0.7rem;
+  transition: 0.2s ease;
 }
 
 .navbar .nav-container a:hover {
+  transition: 0.2s ease;
   color: #f2f2f2;
+}
+
+.navbar .menu-items li:hover {
+  transition: 0.3s ease-in-out;
+  scale: 1.1;
 }
 
 .nav-container .checkbox {
@@ -142,6 +173,7 @@ ul {
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
+  transition: 0.3s ease-in-out;
 }
 
 /* menu movimenta-se em X */
@@ -163,8 +195,56 @@ ul {
 }
 
 /*--------------*/
+.buttons-filter {
+  width: 100%;
+  display: flex;
+  gap: 1%;
+}
+
 .filter-button {
-  margin: 10px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid #dbdbdb;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3b3b3b;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 2%;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 20%;
+  will-change: transform;
+  text-align: center;
+}
+
+.filter-button:disabled {
+  pointer-events: none;
+}
+
+.filter-button:hover {
+  background-color: #dbdbdb;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.filter-button:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 .spline {
@@ -189,6 +269,13 @@ ul {
   width: 60%;
   margin-left: 5%;
   z-index: 1;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.home-title:hover {
+  margin-bottom: 2%;
+  color: #0d0d0d;
 }
 
 .projectlist {
@@ -241,6 +328,12 @@ ul {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 30px;
+  transition: 0.3s ease-in-out;
+}
+
+.img-projects img:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .category {
@@ -266,6 +359,7 @@ ul {
 .img-about {
   width: 80%;
   height: auto;
+  text-align: center;
 }
 
 .img-about img {
@@ -274,6 +368,14 @@ ul {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem;
+  -o-object-position: top;
+     object-position: top;
+  transition: 0.3s ease-in-out;
+}
+
+.img-about img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .title-about {
@@ -306,11 +408,18 @@ ul {
   border-radius: 10%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-info img:hover {
+  transform: scale(0.9);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .container-photos {
   height: 55vw;
   background-color: #0d0d0d;
+  margin-bottom: 2px;
 }
 
 .line-with-dots {
@@ -349,6 +458,11 @@ ul {
   display: flex;
   justify-content: center;
   padding-top: 5vw;
+  transition: 0.3s ease-in-out;
+}
+
+.team:hover {
+  color: #a70a27;
 }
 
 .footer {
@@ -367,6 +481,11 @@ ul {
 .center-email a {
   color: #fff;
   text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.center-email a:hover {
+  color: #a70a27;
 }
 
 .right-social {
@@ -385,6 +504,11 @@ ul {
 .logo-footer {
   fill: #f2f2f2;
   width: 5%;
+  transition: 0.3s ease-in-out;
+}
+
+.logo-footer:hover {
+  fill: #a70a27;
 }
 
 .description {
@@ -638,6 +762,7 @@ svg #wheel {
 
 .img-works:hover .featured-img {
   transform: scale(1.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .featured-img {
@@ -789,7 +914,7 @@ svg #wheel {
     display: flex;
     flex-direction: column;
     width: 70%;
-    margin-top: 102%;
+    margin-top: 50%;
     margin-right: 15%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -903,6 +1028,13 @@ svg #wheel {
   .project-info {
     width: 65vw;
   }
+  .filter-button {
+    z-index: -1;
+    width: 100%;
+  }
+  .buttons-filter {
+    flex-direction: column;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   /* homepage */
@@ -942,7 +1074,7 @@ svg #wheel {
     display: flex;
     flex-direction: column;
     width: 70%;
-    margin-top: 102%;
+    margin-top: 69%;
     margin-right: 15%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -968,6 +1100,13 @@ svg #wheel {
   .group p {
     margin-left: 6%;
     width: 80%;
+  }
+  .filter-button {
+    z-index: -1;
+    width: 100%;
+  }
+  .buttons-filter {
+    flex-direction: column;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -1003,7 +1142,7 @@ svg #wheel {
     display: flex;
     flex-direction: column;
     width: 70%;
-    margin-top: 102%;
+    margin-top: 52%;
     margin-right: 15%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -1034,6 +1173,13 @@ svg #wheel {
   .group p {
     margin-left: 5%;
     width: 80%;
+  }
+  .filter-button {
+    z-index: -1;
+    width: 100%;
+  }
+  .buttons-filter {
+    flex-direction: column;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
